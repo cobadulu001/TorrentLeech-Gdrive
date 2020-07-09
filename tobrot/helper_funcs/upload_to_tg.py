@@ -161,7 +161,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         print(gau_link)
         #indexurl = f"{INDEX_LINK}/{file_upload}"
         #tam_link = requests.utils.requote_uri(indexurl)
-        gjay = size(os.path.getsize(file_upload))B
+        gjay = size(os.path.getsize(file_upload))"B"
         print(gjay)
         button = []
         button.append([pyrogram.InlineKeyboardButton(text="☁️ GDrive Link ☁️", url=f"{gau_link}")])
@@ -199,7 +199,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         #indexurl = f"{INDEX_LINK}/{file_upload}/"
         #tam_link = requests.utils.requote_uri(indexurl)
         #print(tam_link)
-        gjay = size(getFolderSize(file_upload))B
+        gjay = size(getFolderSize(file_upload))"B"
         print(gjay)
         button = []
         button.append([pyrogram.InlineKeyboardButton(text="☁️ GoogleDrive ☁️", url=f"{gau_link}")])
