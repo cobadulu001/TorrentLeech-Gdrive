@@ -161,7 +161,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         print(gau_link)
         #indexurl = f"{INDEX_LINK}/{file_upload}"
         #tam_link = requests.utils.requote_uri(indexurl)
-        gjay = size(os.path.getsize(file_upload)(text="B"))
+        gjay = size(os.path.getsize(file_upload))
         print(gjay)
         button = []
         button.append([pyrogram.InlineKeyboardButton(text="☁️ GDrive Link ☁️", url=f"{gau_link}")])
@@ -172,7 +172,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append([pyrogram.InlineKeyboardButton(text="ℹ️ AyoDL Link ℹ️", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"📁 {file_upload} \n\n💾 Size: {gjay} \n\n✔️ Uploaded successfully", reply_markup=button_markup)
+        await messa_ge.reply_text(f"📁 {file_upload} \n\n💾 Size: {gjay}B \n\n✔️ Uploaded successfully", reply_markup=button_markup)
         #await message.edit_text(f"""📁 {file_upload} has been Uploaded successfully to cloud 🚀\n\n☁️ Cloud URL:  <a href="{gau_link}">FileLink</a>\nℹ️ Direct URL:  <a href="{tam_link}">IndexLink</a>""")
         os.remove(file_upload)
         await del_it.delete()
@@ -199,7 +199,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         #indexurl = f"{INDEX_LINK}/{file_upload}/"
         #tam_link = requests.utils.requote_uri(indexurl)
         #print(tam_link)
-        gjay = size(getFolderSize(file_upload)(text="B"))
+        gjay = size(getFolderSize(file_upload))
         print(gjay)
         button = []
         button.append([pyrogram.InlineKeyboardButton(text="☁️ GoogleDrive ☁️", url=f"{gau_link}")])
@@ -210,7 +210,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append([pyrogram.InlineKeyboardButton(text="ℹ️ AyoDL ℹ️", url=f"{tam_link}")])
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
-        await messa_ge.reply_text(f"📁 {file_upload} \n\n💾 Size: {gjay} \n\n✔️ Uploaded successfully", reply_markup=button_markup)
+        await messa_ge.reply_text(f"📁 {file_upload} \n\n💾 Size: {gjay}B \n\n✔️ Uploaded successfully", reply_markup=button_markup)
         #await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
         #await messa_ge.reply_text(f"""📂 {file_upload} has been Uploaded successfully to cloud 🚀\n\n☁️ Cloud URL:  <a href="{gau_link}">FolderLink</a>\nℹ️ Index Url:. <a href="{tam_link}">IndexLink</a>""")
         shutil.rmtree(file_upload)
